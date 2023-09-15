@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sun {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(#ff8F00, #FFDE00);
+        box-shadow: 0 0 50px #ffe63e;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .earth {
+        width: 35px;
+        height: 35px;
+        background-image: url(earth.png);
+        background-size: cover; /* Use "cover" instead of "100%" */
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -15px;
+    }
+
+    @keyframes orbit {
+        0% {
+            transform: rotate(0deg) translateX(150px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(150px) rotate(-360deg);
+        }
+    }
+
+    .earth {
+        animation: orbit 3s linear infinite;
+    }
+</style>
+<body>
+    <div class="sun"></div>
+    <div class="earth"></div>
+</body>
+</html>
